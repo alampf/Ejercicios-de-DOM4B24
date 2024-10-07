@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: burlywood;
+        }
+        .images, .choices, .result {
+            width: 100%;
+            text-align: center;
+        }
+        picture img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <picture>
+            <img src="./images/Piedra.png" alt="" data-id="Piedra">
+        </picture>
+        <picture>
+            <img src="./images/Papel.png" alt="" data-id="Papel">
+        </picture>
+        <picture>
+            <img src="./images/Tijera.png" alt="" data-id="Tijera">
+        </picture>
+    </div>
+    <div class="choices">
+        <picture>
+            <img src="" alt="" id="choiceUser">
+        </picture>
+        <picture>
+            <img src="" alt="" id="choiceCompu">
+        </picture>
+    </div>
+    <div class="result">
+        <h1>Gana: <span></span></h1>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
