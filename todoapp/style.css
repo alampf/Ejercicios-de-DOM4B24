@@ -1,0 +1,43 @@
+body {
+    width: 100vw;
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button {
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+#tareas {
+    margin-top: 15px;
+}
+.container {
+    width: 80%;
+    text-align: center;
+}
+.alert {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.danger {
+    border: 2px solid red;
+    background-color: rgba(243, 199, 199, 0.453);
+    margin-top: 5px;
+}
+.warning {
+    border: 2px solid orange;
+    background-color: rgb(255, 211, 129);
+    margin-top: 5px;
+}
+.succes {
+    border: 2px solid green;
+    background-color: rgb(136, 255, 136);
+    margin-top: 5px;
+}
