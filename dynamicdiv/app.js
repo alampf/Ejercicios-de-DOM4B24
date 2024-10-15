@@ -10,14 +10,14 @@ let ancho = 0;
 let largo = 0;
 let borde = 0;
 let radius = 0;
-let sombra = 0;
+let sombra = 1;
 
 const generateForm = () => {
     div.style.width = `${ancho}px`;
     div.style.height = `${largo}px`;
     div.style.border = `${borde}px solid black`;
     div.style.borderRadius = `${radius}px`;
-    div
+    div.style.boxShadow = `${sombra}px gray`
 }
 inputAncho.addEventListener('input', (e) => {
     ancho = e.target.value;
@@ -35,7 +35,7 @@ inputRadius.addEventListener('input', (e) => {
     radius = e.target.value;
     div.style.borderRadius = `${radius}px`;
 });
-inputSombra.addEventListener('inpur', (e) => {
+inputSombra.addEventListener('input', (e) => {
     sombra = e.target.value;
     div.style.boxShadow = `${sombra}px gray`;
 })
