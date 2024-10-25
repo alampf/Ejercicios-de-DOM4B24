@@ -40,7 +40,6 @@ function resetGame() {
     document.getElementById('score').innerText = 'Puntos: ' + score;
     food.aparece();
 }
-
 function checkEat() {
     if (snake[0].x === food.x && snake[0].y === food.y) {
         food.aparece();
@@ -65,13 +64,15 @@ function nextMove(x, y) {
 function collision() {
     for (let i = 1; i < snake.length; i++) {
         if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
-            alert("¡PERDSTEEE!");
+            alert("¡GAME OVER!");
             resetGame();
+            return true;
         }
-        if (x < 0 || x > 29) {
-            alert("¡PERDISTEEE!");
-            resetGame();
-        }
+    }
+    if (x < 0 || x > 29 || y < 1 || y > 20) {
+        alert("¡GAME OVER!");
+        resetGame();
+        return true;
     }
     return false;
 }
@@ -87,22 +88,12 @@ setInterval(() => {
         else if (direction === 2) y++;
         else if (direction === 3) x--;
         else y--;
-        if (x > 29) x = 0;
-        else if (x < 0) x = 29;
-        if (y > 20) y = 1;
-        else if (y < 1) y = 20;
     }
 }, 125);
-document.querySelector('body')
-.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') direction = 1;   
-    if (e.key === 'ArrowDown') direction = 2;   
-    if (e.key === 'ArrowLeft') direction = 3;   
-    if (e.key === 'ArrowUp') direction = 4;   
+
+document.querySelector('body').addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' && direction !== 3) direction = 1;
+    if (e.key === 'ArrowDown' && direction !== 4) direction = 2;
+    if (e.key === 'ArrowLeft' && direction !== 1) direction = 3;
+    if (e.key === 'ArrowUp' && direction !== 2) direction = 4;
 });
-// if (this.on) ctx.fillStyle = 'yellow';
-// else ctx.fillStyle = 'blue';
-// ctx.beginPath();
-// ctx.arc(this.x * 10, this.y * 10, 10, 0, Math.PI * 2);
-// ctx.fill();
-// this.on = !this.on;

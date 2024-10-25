@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,9 @@
             flex-direction: column;
             background-color: burlywood;
         }
-        .images, .choices, .result {
+        .images,
+        .choices,
+        .result {
             width: 100%;
             text-align: center;
         }
@@ -21,9 +24,25 @@
             height: 250px;
             border-radius: 50%;
         }
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
+    <div class="image-container">
+        <a href="../index.html"><img src="./images/home.png" alt="Home"></a>
+    </div>
     <div class="images">
         <picture>
             <img src="./images/Piedra.png" alt="" data-id="Piedra">

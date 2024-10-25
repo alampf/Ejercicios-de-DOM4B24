@@ -19,7 +19,7 @@ const changeColor = () => {
     //     }
     // }
     let color = '#';
-    const letras = '0123456789ABCDF';
+    const letras = '0123456789ABCDEF';
     for (let i = 0; i < 6; i++){
         const aleatorio = Math.floor(Math.random() * 16)
         color += letras[aleatorio];

@@ -1,0 +1,31 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: rgb(48, 46, 46);
+}
+h1 {
+    text-align: center;
+}
+div {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin: 0 25px;
+    height: 40px;
+    width: 175px;
+    border: none;
+    border-style: 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 64, 255);
+    cursor: pointer;
+}

@@ -17,9 +17,30 @@
             border: 1px solid black;
             box-shadow: gray 1px;
         }
+        div {
+            background-color: aquamarine;
+        }
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            background: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            background: none;
+        }
     </style>
 </head>
 <body>
+    <div class="image-container">
+        <a href="../index.html"><img src="./images/home.png" alt="Home"></a>
+	</div>
     <div class="container"></div>
     <label for="ancho">Ancho</label>
     <input type="range" id="ancho" min="100" max="500">
@@ -30,7 +51,11 @@
     <label for="radius">Border Radius</label>
     <input type="range" id="radius" min="0" max="500">
     <label for="sombra">Sombra</label>
-    <input type="range" id="shadow" min="0" max="1">
+    <input type="range" id="shadow" min="0" max="50">
+    <label for="desplazamientoX">Desplazamiento X</label>
+    <input type="range" id="desplazamientoX" min="-50" max="50">
+    <label for="desplazamientoY">Desplazamiento Y</label>
+    <input type="range" id="desplazamientoY" min="-50" max="50">
     <script src="./app.js"></script>
 </body>
 </html>

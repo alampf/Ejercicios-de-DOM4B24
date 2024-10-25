@@ -1,27 +1,40 @@
 const lienzo = document.querySelector('#lienzo');
 const ctx = lienzo.getContext('2d');
 
-let x = 297;
-let y = 198;
-let radioInicial = 50;
-let cambioRadio = 2;
+let width = 6;
+let height = 4;
 let coloInicial = 0;
-let widht = 6;
-let heigth = 4;
 let crece = true;
 
+// Posicionar el rectángulo inicialmente en el centro
+let x = (lienzo.width - width) / 2;
+let y = (lienzo.height - height) / 2;
+
 setInterval(() => {
-    ctx.fillStyle = `hsl(${heigth}, 50%, 50%)`;
-    ctx.fillRect(x, y, widht, heigth);
+    ctx.clearRect(0, 0, lienzo.width, lienzo.height);
+    ctx.fillStyle = `hsl(${coloInicial}, 50%, 50%)`;
+    ctx.fillRect(x, y, width, height);
+    
     if (crece) {
-        x -= 3;
-        widht += 6;
-        y -= 2;
-        heigth += 4;
+        width += 6;
+        height += 4;
+        x = (lienzo.width - width) / 2;
+        y = (lienzo.height - height) / 2;
+        coloInicial += 10;
+        if (width >= lienzo.width || height >= lienzo.height) {
+            crece = false;
+        }
     } else {
-        
+        width -= 6;
+        height -= 4;
+        x = (lienzo.width - width) / 2;
+        y = (lienzo.height - height) / 2;
+        coloInicial -= 10;
+        if (width <= 6 || height <= 4) {
+            crece = true;
+        }
     }
-}, 50)
+}, 50);
 
 // const circle = {
 //     x: 200,

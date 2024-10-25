@@ -26,9 +26,25 @@
             align-items: center;
             place-items: center;
         }
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
+    <div class="image-container">
+        <a href="../index.html"><img src="./images/home2.png" alt="Home"></a>
+	</div>
     <div class="container">
         <h1>Mi Primer Juego con Canvas</h1>
         <div id="score">Puntos: 0</div>

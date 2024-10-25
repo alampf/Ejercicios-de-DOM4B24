@@ -9,21 +9,24 @@ let greenColor = 0;
 let blueColor = 0;
 
 const generateColor = () => {
-    return `rgb(${redColor},${greenColor},${blueColor})`;
+    return `rgb(${redColor}, ${greenColor}, ${blueColor})`;
 }
 
-inputRed.addEventListener('change', (e) => {
-    redColor = e.target.value;
-    body.style.backgroundColor = generateColor();
-    // console.log(e.target.value);
+const updateColor = () => {
+    const color = generateColor();
+    body.style.backgroundColor = color;
+    span.textContent = color;
+}
+
+inputRed.addEventListener('input', (e) => {
+    redColor = parseInt(e.target.value, 10);
+    updateColor();
 });
-inputGreen.addEventListener('change', (e) => {
-    greenColor = e.target.value;
-    body.style.backgroundColor = generateColor();
-    // console.log(e.target.value);
+inputGreen.addEventListener('input', (e) => {
+    greenColor = parseInt(e.target.value, 10);
+    updateColor();
 });
-inputBlue.addEventListener('change', (e) => {
-    blueColor = e.target.value;
-    body.style.backgroundColor = generateColor();
-    // console.log(e.target.value);
+inputBlue.addEventListener('input', (e) => {
+    blueColor = parseInt(e.target.value, 10);
+    updateColor();
 });
